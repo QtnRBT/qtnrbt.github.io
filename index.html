@@ -3,61 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/master.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/Lucas design logo.jpg" type="image/jpg">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Lucas Designs - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d42f1ce859.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="Lucas design logo.jpg" type="image/jpg">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <a href="index.html"><img src="assets/images/Lucas design logo.jpg" alt="..."></a>
+
+    <div class="menu">
+        <ul>
+            <li><a href="https://discord.gg/Kgbwuwh">Discord</a></li>
+        </ul>
+    </div>
+
+    <section class="banner">
+        <header>
+            <img src="Lucas design logo.jpg" alt="..." class="logo">
+            <div class="toggle" onclick="toggleMenu();"></div>
+        </header>
+        <div class="overlay"></div>
+        <div class="text">
+            <h2>Lucas Designs</h2>
+            <h3>Graphic Designer</h3>
+            <p>Hello there, I'm Lucas Designs. I create mods for the F1 game, such as car liveries and custom helmets. Feel free to check out my creations !</p>
+            <a href="https://www.racedepartment.com/downloads/authors/lucas351.1011463/" class="btn" target="_blank">See creations</a>
         </div>
-        <div class="menu">
-            <a href="#">Current projects</a>
-            <a href="#">Released mods</a>
-            <a href="#">Contact</a>
-        </div>
-        <a href="https://www.youtube.com/channel/UCe0UD4Y4vPD1WLqSo2x-lcg" target="_blank" class="btn yt">YouTube</a>
-    </header>
-    <section class="main">
-        <div class="hero-texts">
-            <p id="title">Customize your game</p>
-            <p id="slogan">Hi there, I'm <strong>Lucas Designs</strong>. I make F1 Game mods, usually car liveries and other resources. These projects can be used to personalize your game, and might enhance your career mode experience. If you want to see more, you can go to my RaceDepartment page or join the Discord server.</p>
-            <br>
-            <div id="buttons">
-                <a href="https://www.racedepartment.com/members/lucas351.1011463/" target="_blank" class="btn-inv">RaceDepartment</a>
-                <a href="https://discord.gg/Kgbwuwh" target="_blank" class="btn dc">Discord</a>
-            </div>
-        </div>
+        <ul class="sci">
+            <li><a href="https://twitter.com/LucasDesigns"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/lucas_designs/"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCe0UD4Y4vPD1WLqSo2x-lcg"><i class="fab fa-youtube"></i></a></li>
+        </ul>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#222f3e" fill-opacity="1" d="M0,288L48,266.7C96,245,192,203,288,186.7C384,171,480,181,576,176C672,171,768,149,864,144C960,139,1056,149,1152,165.3C1248,181,1344,203,1392,213.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-    </svg>
-    <section class="whatido">
-        <div class="sec" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
-            <p><span class="title">Special mods</span><br><br>I try to always innovate when I make my liveries. For instance, I create car paints that you have never seen before, and that will make your team stand out of the classical game.</p>
-            <img src="assets/images/secondSection1.jpg" alt="">
-        </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <div class="sec inv" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" data-aos-delay="300">
-            <p><span class="title">Accurate paints</span><br><br>Beside making special mods, I also try my best to remake existing liveries, such as recent liveries in the older games.</p>
-            <img src="assets/images/secondSection2.jpg" alt="">
-        </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <div class="bottombtn" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" data-aos-delay="500">
-            <p class="title">Want a better career mode ?</p>
-            <br>
-            <a href="https://www.racedepartment.com/downloads/authors/lucas351.1011463/" target="_blank" class="btn">See more</a>
-        </div>
-    </section>
-    <footer>
-        <p>© 2020 Lucas Designs. All rights reserved</p>
-    </footer>
+
     <script>
-        AOS.init();
+        function toggleMenu() {
+            let menuToggle = document.querySelector(".toggle");
+            let banner = document.querySelector(".banner");
+            menuToggle.classList.toggle('active');
+            banner.classList.toggle('active');
+        }
     </script>
+    
 </body>
 </html>
